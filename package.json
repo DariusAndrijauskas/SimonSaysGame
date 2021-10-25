@@ -16,6 +16,9 @@
   },
   "author": "Darius Andrijauskas",
   "license": "ISC",
+  "engines": {
+    "node": "14.17.5"
+  },
   "bugs": {
     "url": "https://github.com/DariusAndrijauskas/SimonSaysGame/issues"
   },
