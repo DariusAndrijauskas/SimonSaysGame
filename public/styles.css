@@ -6,7 +6,13 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin-top:  5%;
+  color: #FEF2BF;
+}
+
+#level-title-2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
   color: #FEF2BF;
 }
 

@@ -32,6 +32,7 @@ function animatePress(currentColour) {
 function nextSequence() {
   level++;
   $("h1").text("Level " + level);
+  $("h2").text("");
 
   setTimeout(function() {
     var randomNumber = Math.floor(Math.random() * 4);
@@ -51,20 +52,20 @@ function startOver() {
 
 function checkAnswer(userChosenColour) {
   if (userChosenColour === gamePattern[currentLevel]) {
-    console.log("success");
     playSound(userChosenColour);
     animatePress(userChosenColour);
-    console.log(currentLevel);
   } else {
-    var wrong = new Audio("sounds/wrong.mp3");
-    wrong.play();
-    $("body").addClass("game-over");
-    setTimeout(function() {
-      $("body").removeClass("game-over");
-    }, 200);
-    $("h1").text("Game Over, Press Any Key to Restart");
-    console.log("wrong");
-    startOver();
+    if (level === 0) {} else {
+      var wrong = new Audio("sounds/wrong.mp3");
+      wrong.play();
+      $("body").addClass("game-over");
+      setTimeout(function() {
+        $("body").removeClass("game-over");
+      }, 200);
+      $("h1").text("Game Over");
+      $("h2").text("press any key to restart");
+      startOver();
+    }
   }
   currentLevel++;
   if (currentLevel === level && level > 0) {
